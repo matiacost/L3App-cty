@@ -8,27 +8,38 @@ public class Vendedor {
 	private String nombre;
 	private String apellido;
 	private boolean estado;
-	private Date fechaRegistro;
+	private java.sql.Date fechaRegistro;
+	private int cedula;
 	
 	public Vendedor() {
 		codigo = 0;
 		nombre = "";
 		apellido = "";
 		estado = false;
-		fechaRegistro = new Date();
+		fechaRegistro = new java.sql.Date(0, 0, 0);
+		cedula = 0;
 	}
 
-	public Vendedor(int codigo, String nombre, String apellido, boolean estado, Date fechaRegistro) {
+	public Vendedor(int codigo, String nombre, String apellido, boolean estado, java.sql.Date fechaRegistro, int cedula) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.estado = estado;
 		this.fechaRegistro = fechaRegistro;
+		this.cedula = cedula;
 	}
 
 	public int getCodigo() {
 		return codigo;
+	}
+
+	public int getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(int cedula) {
+		this.cedula = cedula;
 	}
 
 	public void setCodigo(int codigo) {
@@ -63,7 +74,7 @@ public class Vendedor {
 		return fechaRegistro;
 	}
 
-	public void setFechaRegistro(Date fechaRegistro) {
+	public void setFechaRegistro(java.sql.Date fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
 	
